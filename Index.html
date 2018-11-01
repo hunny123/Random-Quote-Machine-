@@ -64,5 +64,19 @@ $(document).ready(function(){
   $(".qoute").html("<q>"+a.quote+"</q>" + "<p>— " + a.author + "</p>"+"<br>"+""+"<p> Category :" + a.cat + "</p>"+"")
 });
 });
+ var i=0;
+$(".jk1").click(function(){
+   if(i==100)
+   {
+     i=0;
+   }
+ i=i+1;
+
+  var link="https://source.unsplash.com/collection/1553815/"+i;
+  $("body").css('background-image','url('+link+')');
+$(".j").html("<q>Getting same background click again on next background</q>");
+});
+ 
+ 
 });
 </script>
