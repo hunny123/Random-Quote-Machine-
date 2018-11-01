@@ -1,0 +1,68 @@
+<html>
+<head>
+<title> random quote machine</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+<style>
+.bo1{
+background-image:url("https://source.unsplash.com/user/hunny123/likes/1600x900");
+background-repeat:no-repeat;
+ background-size: cover; 
+   background-position: center;
+  }
+  .bo2{
+    background-image:url("https://source.unsplash.com/user/hunny123/likes/1600x900");
+  }  
+.qoute p{
+text-align:right;
+font-weight:bold;
+font-size:30px;}
+.qoute,.j{
+font-style:italic;
+font-size:25px;
+color:white;}
+.cl{
+
+color:white;
+padding-left:30px !important;
+}
+
+.cl1 {
+background:transparent;
+color:white;
+font-weight:bold;}</style>
+</head>
+<body class="bo1">
+  <div class="container-fluid">
+<div class="jumbotron jumbotron-fluid cl1">
+<div class="container">
+<center> <h1>Random Quote MAchine</h1></center></div>
+</div>
+<div class="row">
+<div class="col-lg-6 cl"><div class="qoute"></div></div>
+  <div class= "col-lg-3"><button class="btn jk btn-primary float-left">NExt qUote</button>
+  <button class="btn jk1 btn-primary float-right">Next background</button>
+</div>
+<div class="col-lg-3 j"></div>
+    </div></div>
+<script>
+$(document).ready(function(){
+    $.getJSON("https://talaikis.com/api/quotes/random/", function(a) {
+  $(".qoute").html("<q>"+a.quote+"</q>" + "<p>— " + a.author + "</p>"+"<br>"+""+"<p> Category :" + a.cat + "</p>"+"")
+});
+   $(".jk").click(function(){
+  
+  $.getJSON("https://talaikis.com/api/quotes/random/", function(a) {
+  $(".qoute").html("<q>"+a.quote+"</q>" + "<p>— " + a.author + "</p>"+"<br>"+""+"<p> Category :" + a.cat + "</p>"+"")
+});
+});
+});
+</script>
